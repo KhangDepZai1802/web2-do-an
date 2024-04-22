@@ -311,4 +311,4 @@ else{
 <?php
 }
 ?>
-10 ĐIỂM WEB2 
+0 ĐIỂM WEB2 
