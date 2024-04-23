@@ -5,6 +5,21 @@ include("../connection/connect.php");
 error_reporting(0);
 session_start();
 
+// Xử lý dữ liệu từ biểu mẫu và lưu vào cơ sở dữ liệu
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Lấy dữ liệu từ biểu mẫu
+    $ten_khach_hang = $_POST['ten_khach_hang'];
+    $email = $_POST['email'];
+    
+    // Tiến hành chèn dữ liệu vào cơ sở dữ liệu
+    $sql = "INSERT INTO ten_bang_du_lieu (ten_khach_hang, email) VALUES ('$ten_khach_hang', '$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Dữ liệu đã được lưu thành công.";
+    } else {
+        echo "Lỗi: " . $sql . "<br>" . $conn->error;
+    }
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -29,7 +44,11 @@ session_start();
 <![endif]-->
 </head>
 
+
 <body class="fix-header fix-sidebar">
+        <form action="ten_tap_tin_xu_ly.php" method="post">
+        <input type="text" name="ten_khach_hang">
+        <input type="email" name="email">
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
