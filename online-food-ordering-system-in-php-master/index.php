@@ -253,7 +253,7 @@ session_start(); //start temp session until logout/browser closed
                     <div class="restaurant-listing">
                         
 						
-						<?php  //fetching records from table and filter using html data-filter tag
+                    <?php  //fetching records from table and filter using html data-filter tag
 						$ress= mysqli_query($db,"select * from restaurant");  
 									      while($rows=mysqli_fetch_array($ress))
 										  {
@@ -291,11 +291,7 @@ session_start(); //start temp session until logout/browser closed
 										  }
 						
 						
-						?>
-						
-							
-						
-					
+						?>	
                     </div>
                 </div>
                 <!-- restaurants listing ends -->
