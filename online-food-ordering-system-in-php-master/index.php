@@ -31,7 +31,7 @@ session_start(); //start temp session until logout/browser closed
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"style="5px"> <img class="img-rounded" src="images/logo.png" alt=""> 
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded"  src="images/logo.png" alt="" width=40px height=40px>
                 
                 </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
@@ -336,7 +336,7 @@ session_start(); //start temp session until logout/browser closed
                 <!-- top footer statrs -->
                 <div class="row top-footer">
                     <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="#"> <img src="images/logo.png" alt="Footer logo" > </a> <span>Order Delivery &amp; Take-Out </span> </div>
+                        <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
                     <div class="col-xs-12 col-sm-2 about color-gray">
                         <h5>About Us</h5>
                         <ul>
@@ -408,8 +408,8 @@ session_start(); //start temp session until logout/browser closed
                         </div>
                         <div class="col-xs-12 col-sm-4 address color-gray">
                             <h5>Address</h5>
-                            <p>Concept design of oline food order and deliveye,planned as branch directory</p>
-                            <h5>Phone: <a href="tel:+080000012222">0909 683 737</a></h5> </div>
+                            <p>Concept design of oline food order and deliveye,planned as restaurant directory</p>
+                            <h5>Phone: <a href="tel:+080000012222">080 000012 222</a></h5> </div>
                         <div class="col-xs-12 col-sm-5 additional-info color-gray">
                             <h5>Addition informations</h5>
                             <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
