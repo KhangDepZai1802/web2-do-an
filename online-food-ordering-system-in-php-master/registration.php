@@ -212,7 +212,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
                         <p></p>
                        
                         <h4 class="m-t-20">Contact Customer Support</h4>
-                        <p> If you"re looking for more help or have a question to ask, please </p>
+                        <p> If you're looking for more help or have a question to ask, please </p>
                         <p> <a href="contact.html" class="btn theme-btn m-t-15">contact us</a> </p>
                      </div>
                      <!-- /WHY? -->
