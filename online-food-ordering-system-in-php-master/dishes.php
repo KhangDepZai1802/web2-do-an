@@ -35,11 +35,11 @@ include_once 'product-action.php'; //including controller
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/logo.png" alt="" width=40px height=40px> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Branch <span class="sr-only"></span></a> </li>
                             
 							<?php
 						if(empty($_SESSION["user_id"]))
@@ -69,8 +69,8 @@ include_once 'product-action.php'; //including controller
                 <div class="container">
                     <ul class="row links">
                       
-                        <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose Restaurant</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick Your favorite food</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose Branch</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Order noodles</a></li>
                         <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay online</a></li>
                     </ul>
                 </div>
@@ -341,32 +341,27 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                     <!-- top footer statrs -->
                     <div class="row top-footer">
                         <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                            <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
+                            <a href="#"> <img src="images/logo.png" alt="Footer logo" width=180px height=180px> </a> <span>Order Delivery &amp; Take-Out </span> </div>
                         <div class="col-xs-12 col-sm-2 about color-gray">
                             <h5>About Us</h5>
                             <ul>
                                 <li><a href="#">About us</a> </li>
-                                <li><a href="#">History</a> </li>
-                                <li><a href="#">Our Team</a> </li>
-                                <li><a href="#">We are hiring</a> </li>
+                                
                             </ul>
                         </div>
                         <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
                             <h5>How it Works</h5>
                             <ul>
-                                <li><a href="#">Enter your location</a> </li>
+                                
                                 <li><a href="#">Choose restaurant</a> </li>
-                                <li><a href="#">Choose meal</a> </li>
-                                <li><a href="#">Pay via credit card</a> </li>
+        
                                 <li><a href="#">Wait for delivery</a> </li>
                             </ul>
                         </div>
                         <div class="col-xs-12 col-sm-2 pages color-gray">
                             <h5>Pages</h5>
                             <ul>
-                                <li><a href="#">Search results page</a> </li>
-                                <li><a href="#">User Sing Up Page</a> </li>
-                                <li><a href="#">Pricing page</a> </li>
+                                
                                 <li><a href="#">Make order</a> </li>
                                 <li><a href="#">Add to cart</a> </li>
                             </ul>
@@ -374,16 +369,10 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                         <div class="col-xs-12 col-sm-3 popular-locations color-gray">
                             <h5>Popular locations</h5>
                             <ul>
-                                <li><a href="#">Sarajevo</a> </li>
-                                <li><a href="#">Split</a> </li>
-                                <li><a href="#">Tuzla</a> </li>
-                                <li><a href="#">Sibenik</a> </li>
-                                <li><a href="#">Zagreb</a> </li>
-                                <li><a href="#">Brcko</a> </li>
-                                <li><a href="#">Beograd</a> </li>
-                                <li><a href="#">New York</a> </li>
-                                <li><a href="#">Gradacac</a> </li>
-                                <li><a href="#">Los Angeles</a> </li>
+                                <li><a href="#">District 1</a> </li>
+                                <li><a href="#">District 5</a> </li>
+                                <li><a href="#">District 3</a> </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -401,21 +390,17 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                         <li>
                                             <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
                                         </li>
-                                        <li>
-                                            <a href="#"> <img src="images/maestro.png" alt="Maestro"> </a>
-                                        </li>
+                                       
                                         <li>
                                             <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
                                         </li>
-                                        <li>
-                                            <a href="#"> <img src="images/bitcoin.png" alt="Bitcoin"> </a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 address color-gray">
                                     <h5>Address</h5>
-                                    <p>Concept design of oline food order and deliveye,planned as restaurant directory</p>
-                                    <h5>Phone: <a href="tel:+080000012222">080 000012 222</a></h5> </div>
+                                    <p>Concept design of oline food order and deliveye,planned as branch directory</p>
+                                    <h5>Phone: <a href="tel:+080000012222">0909 683 737</a></h5> </div>
                                 <div class="col-xs-12 col-sm-5 additional-info color-gray">
                                     <h5>Addition informations</h5>
                                     <p>Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
