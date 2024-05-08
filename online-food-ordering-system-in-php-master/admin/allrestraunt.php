@@ -44,10 +44,10 @@ session_start();
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="images/logoimg.png" width=70px height=70px /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -87,7 +87,7 @@ session_start();
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/avatar/avam.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                    
@@ -106,7 +106,7 @@ session_start();
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                   <ul id="sidebarnav">
+                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
@@ -124,18 +124,18 @@ session_start();
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">branch</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
+								<li><a href="allrestraunt.php">All branch</a></li>
 								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
+                                <li><a href="add_restraunt.php">Add branch</a></li>
                                 
                             </ul>
                         </li>
-                      <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">All Products</a></li>
+								<li><a href="add_menu.php">Add Product</a></li>
                               
                                 
                             </ul>
@@ -176,7 +176,7 @@ session_start();
 						
 						     <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All stores data</h4>
+                                <h4 class="card-title">All Branch data</h4>
                                 <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
 								
                                 <div class="table-responsive m-t-40">
@@ -184,7 +184,7 @@ session_start();
                                         <thead>
                                             <tr>
 											 <th>Cat</th>
-                                                <th>Store-Name</th>
+                                                <th>Branch-Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Url</th>
@@ -192,7 +192,7 @@ session_start();
                                                 <th>Close Hrs</th>
 												<th>Open Days</th>
 												  <th>Address</th>
-												  <th>Store-Image</th>
+												  <th>Branch-Image</th>
 												  <th>Date</th>
 												   <th>Action</th>
 												  
@@ -201,7 +201,7 @@ session_start();
                                         <tfoot>
                                             <tr>
 											 <th>Cat</th>
-                                                <th>Store-Name</th>
+                                                <th>Branch-Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Url</th>
@@ -210,7 +210,7 @@ session_start();
                                                 <th>Close Hrs</th>
 												<th>Open Days</th>
 												  <th>Address</th>
-												  <th>Store-Image</th>
+												  <th>Branch-Image</th>
 												  <th>Date</th>
 												   <th>Action</th>
                                             </tr>

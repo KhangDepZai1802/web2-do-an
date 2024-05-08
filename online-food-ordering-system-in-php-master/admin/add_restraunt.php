@@ -64,7 +64,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 			  
 													$success = 	'<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrass!</strong> New Restaurant Added Successfully.
+																<strong>Congrass!</strong> New Branch Added Successfully.
 															</div>';
                 
 	
@@ -144,10 +144,10 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="images/logoimg.png" width=70px height=70px /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -187,7 +187,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/avatar/avam.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -205,7 +205,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                   <ul id="sidebarnav">
+                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
@@ -223,18 +223,18 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">branch</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
+								<li><a href="allrestraunt.php">All branch</a></li>
 								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
+                                <li><a href="add_restraunt.php">Add branch</a></li>
                                 
                             </ul>
                         </li>
-                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">All Products</a></li>
+								<li><a href="add_menu.php">Add Product</a></li>
                               
                                 
                             </ul>
@@ -276,7 +276,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">Add Restaurant</h4>
+                                <h4 class="m-b-0 text-white">Add Branch</h4>
                             </div>
                             <div class="card-body">
                                 <form action='' method='post'  enctype="multipart/form-data">
@@ -286,8 +286,8 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Restaurant Name</label>
-                                                    <input type="text" name="res_name" class="form-control" placeholder="John doe">
+                                                    <label class="control-label">Branch Name</label>
+                                                    <input type="text" name="res_name" class="form-control" placeholder="Khang Le">
                                                    </div>
                                             </div>
                                             <!--/span-->
@@ -395,7 +395,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 											
                                         </div>
                                         <!--/row-->
-                                        <h3 class="box-title m-t-40">Store Address</h3>
+                                        <h3 class="box-title m-t-40">Branch Address</h3>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-12 ">

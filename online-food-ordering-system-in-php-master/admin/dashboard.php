@@ -49,10 +49,10 @@ else
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="images/logoimg.png" width=70px height=70px /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -92,7 +92,7 @@ else
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/avatar/avam.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -128,18 +128,18 @@ else
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">branch</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
+								<li><a href="allrestraunt.php">All branch</a></li>
 								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
+                                <li><a href="add_restraunt.php">Add branch</a></li>
                                 
                             </ul>
                         </li>
-                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">All Products</a></li>
+								<li><a href="add_menu.php">Add Product</a></li>
                               
                                 
                             </ul>
@@ -184,7 +184,7 @@ else
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Stores</p>
+                                    <p class="m-b-0">Branch</p>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ else
 													$rws=mysqli_num_rows($result);
 													
 													echo $rws;?></h2>
-                                    <p class="m-b-0">Dishes</p>
+                                    <p class="m-b-0">Products</p>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@ else
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. </footer>
+            <footer class="footer"> © 2024 All rights reserved. </footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->

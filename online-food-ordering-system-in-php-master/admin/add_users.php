@@ -120,10 +120,10 @@ if(isset($_POST['submit'] ))
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="images/logoimg.png" width=70px height=70px /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -163,7 +163,7 @@ if(isset($_POST['submit'] ))
                       
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/avatar/avam.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
@@ -181,7 +181,7 @@ if(isset($_POST['submit'] ))
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                   <ul id="sidebarnav">
+                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
@@ -199,18 +199,18 @@ if(isset($_POST['submit'] ))
                                
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Store</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">branch</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="allrestraunt.php">All Stores</a></li>
+								<li><a href="allrestraunt.php">All branch</a></li>
 								<li><a href="add_category.php">Add Category</a></li>
-                                <li><a href="add_restraunt.php">Add Restaurant</a></li>
+                                <li><a href="add_restraunt.php">Add branch</a></li>
                                 
                             </ul>
                         </li>
-                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
+                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Product</span></a>
                             <ul aria-expanded="false" class="collapse">
-								<li><a href="all_menu.php">All Menues</a></li>
-								<li><a href="add_menu.php">Add Menu</a></li>
+								<li><a href="all_menu.php">All Products</a></li>
+								<li><a href="add_menu.php">Add Product</a></li>
                               
                                 
                             </ul>
@@ -235,27 +235,15 @@ if(isset($_POST['submit'] ))
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Dashboard</h3> </div>
-               
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
                      <div class="row">
-                   
-                   
-					
-					 <div class="container-fluid">
-                <!-- Start Page Content -->
-                  
-									
-									<?php  echo var_dump($_POST);
+					 <div class="container-fluid"><!-- Start Page Content --><?php  echo var_dump($_POST);
 									        echo $error;
 									        echo $success; ?>
-									
-									
-								
-								
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
@@ -277,7 +265,7 @@ if(isset($_POST['submit'] ))
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">First-Name</label>
-                                                    <input type="text" name="fname" class="form-control form-control-danger" placeholder="jon">
+                                                    <input type="text" name="fname" class="form-control form-control-danger" placeholder="Khang">
                                                     </div>
                                             </div>
                                             <!--/span-->
@@ -287,7 +275,7 @@ if(isset($_POST['submit'] ))
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Last-Name </label>
-                                                    <input type="text" name="lname" class="form-control" placeholder="doe">
+                                                    <input type="text" name="lname" class="form-control" placeholder="Le">
                                                    </div>
                                             </div>
                                             <!--/span-->
@@ -356,7 +344,7 @@ if(isset($_POST['submit'] ))
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. </footer>
+            <footer class="footer"> © 2024 All rights reserved. </footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
