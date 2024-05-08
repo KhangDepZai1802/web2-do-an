@@ -113,7 +113,7 @@ session_start(); //start temp session until logout/browser closed
         <section class="popular">
             <div class="container">
                 <div class="title text-xs-center m-b-30">
-                    <h2>Popular Dishes of the Month</h2>
+                    <h2>Popular Noodles of the Month</h2>
                     <p class="lead">The easiest way to your favourite food</p>
                 </div>
                 <div class="row">
@@ -223,7 +223,7 @@ session_start(); //start temp session until logout/browser closed
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="title-block pull-left">
-                            <h4>Featured restaurants</h4> </div>
+                            <h4>Featured Branch</h4> </div>
                     </div>
                     <div class="col-sm-8">
                         <!-- restaurants filter nav starts -->
