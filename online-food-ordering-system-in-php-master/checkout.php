@@ -162,38 +162,46 @@ else{
         </li>
         <li>
             <label class="custom-control custom-radio m-b-20">
-                <input name="mod" id="radioStacked2" type="radio" value="paypal" class="custom-control-input">
+                <input name="mod" id="radioStacked2" type="radio" value="paypal" class="custom-control-input" onclick="toggleCardInfo()">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span>
             </label>
         </li>
     </ul>
+    <!-- Phần thông tin thẻ PayPal -->
+    <div id="cardInfo" style="display: none;">
+        <!-- Thêm các trường nhập thông tin thẻ tại đây -->
+        <div class="form-group">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" class="form-control" id="cardNumber">
+        </div>
+        <div class="form-group">
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="text" class="form-control" id="expirationDate">
+        </div>
+        <!-- Các trường thông tin thêm có thể được thêm vào ở đây -->
+    </div>
     <p class="text-xs-center">
         <input type="submit" onclick="confirmOrder();" name="submit" class="btn btn-outline-success btn-block" value="Order now">
     </p>
 </div>
-<!-- Modal cho thanh toán PayPal -->
-<div id="paypalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="paypalModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="paypalModalLabel">Pay with PayPal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Form nhập thông tin thanh toán PayPal -->
-                <!-- Bạn có thể thêm các trường nhập thông tin cần thiết ở đây -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="confirmPayPalOrder()">Hoàn tất</button>
-            </div>
-        </div>
-    </div>
-</div>
+<style>#cardInfo {
+    display: none;
+}
+</style> 
+
 <script>
+    function toggleCardInfo() {
+    var paymentMethod = document.querySelector('input[name="mod"]:checked').value;
+    var cardInfo = document.getElementById('cardInfo');
+    if (paymentMethod === 'paypal') {
+        cardInfo.style.display = 'block'; // Hiển thị thông tin thẻ PayPal khi chọn PayPal
+    } else {
+        cardInfo.style.display = 'none'; // Ẩn thông tin thẻ PayPal khi không chọn PayPal
+    }
+}
+
+
     function confirmPayPalOrder() {
         // Thực hiện xác nhận thanh toán PayPal và kiểm tra thông tin nhập vào
         // Nếu thông tin hợp lệ, bạn có thể thực hiện các bước cần thiết trước khi chuyển hướng
