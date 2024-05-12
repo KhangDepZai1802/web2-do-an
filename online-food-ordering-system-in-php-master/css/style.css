@@ -2730,15 +2730,3 @@ a[aria-expanded=false] .fa-angle-down {
     color: #3a3e47;
 }
 
-/*====================
-Detail
-======================*/
-.container{
-    width: 1200px;
-    margin: 0 auto;
-    border: 1 px solid #000;
-
-}
-h1{
-    text-align: center;
-}
