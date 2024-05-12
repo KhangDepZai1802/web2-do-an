@@ -80,31 +80,41 @@ session_start(); //start temp session until logout/browser closed
                 <!-- end:Container -->
             </div>
             <?php 
-					
-						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
-									      while($r=mysqli_fetch_array($query_res))
-                                                          
+    include("connection/connect.php");  //include connection file
+    error_reporting(0);  // using to hide undefined index errors
+    session_start(); //start temp session until logout/browser closed
 
-          ?>
+    // Truy vấn để lấy thông tin sản phẩm từ cơ sở dữ liệu
+    $query_res = mysqli_query($db, "SELECT * FROM dishes LIMIT 1");
+
+    // Kiểm tra xem có bản ghi nào được trả về không
+    if(mysqli_num_rows($query_res) > 0) {
+        while($r = mysqli_fetch_array($query_res)) {
+?>
             <div class="container">
                 <div id="product-detail">
                     <div id="product-img">
-                    <?php echo '   <img data-image-src="admin/Res_img/dishes/'.$r['img'].'" width=350px height=350px>';?> <?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?>
-                            
-                        </div>
+                        <!-- Sử dụng đường dẫn hình ảnh từ cột img -->
+                        <img src="admin/Res_img/dishes/<?php echo $r['img']; ?>" width="350px" height="350px" alt="Food Image">
+                    </div>
                     <div id="product-info">
-                        <h1>HAO HAO-Spicy sour instant noodles </h1>
-                        <label>Price: </label><span class="product-price">$1.10</span><br/>
-                        <label class="add-to-card"><a href="restaurants.php">Add to card</a></label>
-                        </div>
-                    
-                    <p >
-                    SQUEEZED NOODLES - Wheat flour (75.0%), shortening, coloring agent (curcumin (E100(i))).
-
-SEASONING PACKET - Shrimp powder (30 g/kg), palm oil, salt, sugar, garlic powder, chili powder, dried spring onion, acid regulator (citric acid (E330)), flavor enhancer (monosodium L-glutamate (E621), disodium 5'-inosinate (E631), disodium 5'-guanylate (E627)).
-                        </p>
+                        <h1><?php echo $r['title']; ?></h1>
+                        <label>Price: </label><span class="product-price">$<?php echo $r['price']; ?></span><br/>
+                        <label class="add-to-card"><a href="restaurants.php">Add to Cart</a></label>
+                    </div>
+                    <p>
+                        <?php echo $r['description']; ?>
+                    </p>
                 </div>
-                        </div>
+            </div>
+<?php
+        }
+    } else {
+        // Nếu không có sản phẩm nào được tìm thấy
+        echo "<p>No products found.</p>";
+    }
+?>
+
             
             <section class="app-section">
                 <div class="app-wrap">
