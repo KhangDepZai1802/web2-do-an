@@ -99,12 +99,25 @@ if(isset($_GET['d_id'])) {
             <img src="admin/Res_img/dishes/<?php echo $r['img']; ?>" alt="<?php echo $r['title']; ?>" class="img-fluid">
         </div>
         <div class="col-md-6">
+        
             <div class="product-details">
+                <br>
                 <h1><?php echo $r['title']; ?></h1>
+                <br>
                 <p class="price">$<?php echo $r['price']; ?></p>
+                <br>
                 <p class="slogan"><?php echo $r['slogan']; ?></p>
+                <br>
+                <p >
+                    SQUEEZED NOODLES - Wheat flour (75.0%), shortening, coloring agent (curcumin (E100(i))).
+
+SEASONING PACKET - Shrimp powder (30 g/kg), palm oil, salt, sugar, garlic powder, chili powder, dried spring onion, acid regulator (citric acid (E330)), flavor enhancer (monosodium L-glutamate (E621), disodium 5'-inosinate (E631), disodium 5'-guanylate (E627)).
+                        </p>
+                        <br>
+                        <br>
                 <label class="add-to-card"><a href="restaurants.php">Add to card</a></label>
             </div>
+            
         </div>
     </div>
 </div>
