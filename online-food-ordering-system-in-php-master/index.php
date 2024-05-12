@@ -146,12 +146,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 																<div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
 																<div class="review pull-right"><a href="#">198 reviews</a> </div>
 															</div>
-															<div class="content">
-																<h5><a href="dishes.php?res_id='.$r['rs_id'].'">'.$r['title'].'</a></h5>
-																<div class="product-name">'.$r['slogan'].'</div>
+															<div class="content" >
+                                                            <h5><a href="detail.php#?d_id='.$r['d_id'].'">'.$r['title'].'</a></h5>
+                                                            
+                                                            <div class="product-name" >'.$r['slogan'].' '.$r['img'].'</div>
 																<div class="price-btn-block"> <span class="price">$'.$r['price'].'</span> <a href="dishes.php?res_id='.$r['rs_id'].'" class="btn theme-btn-dash pull-right">Order Now</a> </div>
 															</div>
-															
+														
 														</div>
 												</div>';
 													

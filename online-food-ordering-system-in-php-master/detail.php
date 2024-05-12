@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("connection/connect.php");
-error_reporting(0);
-session_start();
+include("connection/connect.php");  //include connection file
+error_reporting(0);  // using to hide undefine undex errors
+session_start(); //start temp session until logout/browser closed
+
 ?>
 <head>
     <meta charset="utf-8">
@@ -22,8 +23,9 @@ session_start();
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> </head>
 
-<body>
-           <!--header starts-->
+<body class="home">
+    
+        <!--header starts-->
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
             <nav class="navbar navbar-dark">
@@ -35,23 +37,25 @@ session_start();
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Branch <span class="sr-only"></span></a> </li>
                             
+                           
 							<?php
-						if(empty($_SESSION["user_id"]))
+						if(empty($_SESSION["user_id"])) // if user is not login
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
 							}
 						else
 							{
+									//if user is login
 									
-									
-										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
+									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}
 
 						?>
 							 
                         </ul>
+						 
                     </div>
                 </div>
             </nav>
@@ -75,18 +79,25 @@ session_start();
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
-          
+            <?php 
+					
+						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
+									      while($r=mysqli_fetch_array($query_res))
+                                                          
+
+          ?>
             <div class="container">
                 <div id="product-detail">
                     <div id="product-img">
-                            <img src="images/HH1.jpg" width=350px height=350px>
+                            <img class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'" width=350px height=350px>
+                            
                         </div>
                     <div id="product-info">
                         <h1>HAO HAO-Spicy sour instant noodles </h1>
                         <label>Price: </label><span class="product-price">$1.10</span><br/>
-                        <label class="add-to-card"><a href="#">Add to card</a></label>
+                        <label class="add-to-card"><a href="restaurants.php">Add to card</a></label>
                         </div>
-                    <div class="clear-both"></div>
+                    
                     <p >
                     SQUEEZED NOODLES - Wheat flour (75.0%), shortening, coloring agent (curcumin (E100(i))).
 

@@ -79,7 +79,6 @@ include_once 'product-action.php'; //including controller
             <!-- start: Inner page hero -->
 			<?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
 									     $rows=mysqli_fetch_array($ress);
-										  
 										  ?>
             <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
                 <div class="profile">
@@ -224,7 +223,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                             </div>
                                             <!-- end:Logo -->
                                             <div class="rest-descr">
-                                                <h6><a href="#"><?php echo $product['title']; ?></a></h6>
+                                                <h6><a href="detail.php#"><?php echo $product['title']; ?></a></h6>
                                                 <p> <?php echo $product['slogan']; ?></p>
                                             </div>
                                             <!-- end:Description -->
