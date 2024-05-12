@@ -206,42 +206,69 @@ session_start();
 																		{
 																																							
 																				?>
-																				<?php
-																					echo ' <tr>
-																					           <td>'.$rows['username'].'</td>
-																								<td>'.$rows['title'].'</td>
-																								<td>'.$rows['quantity'].'</td>
-																								<td>$'.$rows['price'].'</td>
-																								<td>'.$rows['address'].'</td>';
-																								?>
-																								<?php 
-																			$status=$rows['status'];
-																			if($status=="" or $status=="NULL")
-																			{
-																			?>
-																			<td> <button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" > Dispatch</button></td>
-																		   <?php 
-																			  }
-																			   if($status=="in process")
-																			 { ?>
-																			<td> <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button></td> 
-																			<?php
-																				}
-																			if($status=="closed")
-																				{
-																			?>
-																			<td> <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></td> 
-																			<?php 
-																			} 
-																			?>
-																			<?php
-																			if($status=="rejected")
-																				{
-																			?>
-																			<td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>cancelled</button></td> 
-																			<?php 
-																			} 
-																			?>
+<?php
+    echo '<tr>
+              <td>'.$rows['username'].'</td>
+              <td>'.$rows['title'].'</td>
+              <td>'.$rows['quantity'].'</td>
+              <td>$'.$rows['price'].'</td>
+              <td>'.$rows['address'].'</td>
+              <td>';
+
+    $status = $rows['status'];
+    echo '<select id="statusDropdown" class="form-select" aria-label="Default select example">';
+    echo '<option disabled selected>Product Status</option>';
+    if(empty($status) || $status == "NULL") {
+        echo '<option>Dispatch</option>';
+        echo '<option>On the Way!</option>';
+        echo '<option>Delivered</option>';
+    } elseif($status == "in process") {
+        echo '<option>Dispatch</option>';
+        echo '<option selected>On the Way!</option>';
+        echo '<option>Delivered</option>';
+    } elseif($status == "closed") {
+        echo '<option>Dispatch</option>';
+        echo '<option>On the Way!</option>';
+        echo '<option selected>Delivered</option>';
+    } elseif($status == "rejected") {
+        echo '<option>Dispatch</option>';
+        echo '<option>On the Way!</option>';
+        echo '<option>Delivered</option>';
+    }
+    echo '</select>';
+    echo '</td>';
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#statusDropdown').change(function(){
+            var selectedStatus = $(this).val();
+            var productId = <?php echo $rows['id']; ?>; // Thay thế id của sản phẩm ở đây
+            $.ajax({
+                url: 'update_status.php', // Đường dẫn đến tập lệnh xử lý PHP
+                method: 'POST',
+                data: { status: selectedStatus, productId: productId },
+                success: function(response){
+                    // Xử lý kết quả nếu cần
+                    console.log(response);
+                },
+                error: function(xhr, status, error){
+                    // Xử lý lỗi nếu cần
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
 																						<?php																									
 																							echo '	<td>'.$rows['date'].'</td>';
 																							?>
