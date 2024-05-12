@@ -90,12 +90,12 @@ session_start(); //start temp session until logout/browser closed
                 <div id="product-detail">
                     <div id="product-img">
                             <img src="images/HH1.jpg" width=350px height=350px>
-                            
+                            <a class="dishes" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
                         </div>
                     <div id="product-info">
                         <h1>HAO HAO-Spicy sour instant noodles </h1>
                         <label>Price: </label><span class="product-price">$1.10</span><br/>
-                        <label class="add-to-card"><a href="restaurants.php">Add to card</a></label>
+                        <label class="add-to-card"><a href="">Add to card</a></label>
                         </div>
                     
                     <p >
