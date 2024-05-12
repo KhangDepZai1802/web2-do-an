@@ -92,7 +92,7 @@ session_start();
                           
                             
                         </div>
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
+                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12">
                             <div class="bg-gray restaurant-entry">
                                 <div class="row">
 								<?php $ress= mysqli_query($db,"select * from restaurant");

@@ -150,19 +150,88 @@ else{
                                     </div>
                                     <!--cart summary-->
                                     <div class="payment-option">
-                                        <ul class=" list-unstyled">
-                                            <li>
-                                                <label class="custom-control custom-radio  m-b-20">
-                                                    <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Payment on delivery</span>
-                                                    <br> <span>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span> </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-control custom-radio  m-b-10">
-                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
-                                            </li>
-                                        </ul>
-                                        <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn btn-outline-success btn-block" value="Order now"> </p>
-                                    </div>
+    <ul class="list-unstyled">
+        <li>
+            <label class="custom-control custom-radio m-b-20">
+                <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Payment on delivery</span>
+                <br>
+                <span>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span>
+            </label>
+        </li>
+        <li>
+            <label class="custom-control custom-radio m-b-20">
+                <input name="mod" id="radioStacked2" type="radio" value="paypal" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span>
+            </label>
+        </li>
+    </ul>
+    <p class="text-xs-center">
+        <input type="submit" onclick="confirmOrder();" name="submit" class="btn btn-outline-success btn-block" value="Order now">
+    </p>
+</div>
+<!-- Modal cho thanh toán PayPal -->
+<div id="paypalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="paypalModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paypalModalLabel">Pay with PayPal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form nhập thông tin thanh toán PayPal -->
+                <!-- Bạn có thể thêm các trường nhập thông tin cần thiết ở đây -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="confirmPayPalOrder()">Hoàn tất</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function confirmPayPalOrder() {
+        // Thực hiện xác nhận thanh toán PayPal và kiểm tra thông tin nhập vào
+        // Nếu thông tin hợp lệ, bạn có thể thực hiện các bước cần thiết trước khi chuyển hướng
+        var confirmed = confirm('Are you sure?');
+        if (confirmed) {
+            // Chuyển hướng đến trang "Your Orders" sau khi hoàn tất thanh toán
+            window.location.href = 'your_orders.php';
+        }
+    }
+</script>
+<script>
+    function showPayPalModal() {
+        $('#paypalModal').modal('show');
+    }
+</script>
+
+<script>
+    function confirmOrder() {
+        var paymentMethod = document.querySelector('input[name="mod"]:checked').value;
+        if (paymentMethod === 'paypal') {
+            var confirmed = confirm('Are you sure?');
+            if (confirmed) {
+                // Thực hiện thanh toán PayPal
+                // Sau khi thanh toán thành công, chuyển đến trang "Your Orders"
+                window.location.href = 'your_orders.php';
+            }
+        } else {
+            var confirmed = confirm('Are you sure?');
+            if (confirmed) {
+                // Thực hiện thanh toán khi giao hàng
+                // Sau khi đặt hàng thành công, chuyển đến trang "Your Orders"
+                window.location.href = 'your_orders.php';
+            }
+        }
+    }
+</script>
+
+
 									</form>
                                 </div>
                             </div>
