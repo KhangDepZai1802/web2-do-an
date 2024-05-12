@@ -123,7 +123,7 @@ include_once 'product-action.php'; //including controller
             </div>
             <div class="container m-t-30">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         
                          <div class="widget widget-cart">
                                 <div class="widget-heading">
@@ -188,13 +188,13 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                       
                         <!-- end:Widget menu -->
                         <div class="menu-widget" id="2">
                             <div class="widget-heading">
                                 <h3 class="widget-title text-dark">
-                              POPULAR ORDERS Delicious hot food! <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2" aria-expanded="true">
+                              POPULAR ORDERS Delicious Noodles! <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2" aria-expanded="true">
                               <i class="fa fa-angle-right pull-right"></i>
                               <i class="fa fa-angle-down pull-right"></i>
                               </a>
@@ -255,52 +255,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                        
                     </div>
                     <!-- end:Bar -->
-                    <div class="col-xs-12 col-md-12 col-lg-3">
-                        <div class="sidebar-wrap">
-                           <div class="widget clearfix">
-                            <!-- /widget heading -->
-                            <div class="widget-heading">
-                                <h3 class="widget-title text-dark">
-                              Popular tags
-                           </h3>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="widget-body">
-                                <ul class="tags">
-                                    <li> <a href="#" class="tag">
-                                 Coupons
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Discounts
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Deals
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Amazon 
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Ebay
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Fashion
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Shoes
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Kids
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Travel
-                                 </a> </li>
-                                    <li> <a href="#" class="tag">
-                                 Hosting
-                                 </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                        </div>
+                    
                     </div>
                     <!-- end:Right Sidebar -->
                 </div>
