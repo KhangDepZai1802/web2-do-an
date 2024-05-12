@@ -89,7 +89,7 @@ session_start(); //start temp session until logout/browser closed
             <div class="container">
                 <div id="product-detail">
                     <div id="product-img">
-                            <img class="figure-wrap bg-image" data-image-src="admin/Res_img/dishes/'.$r['img'].'" width=350px height=350px>
+                    <?php echo '   <img data-image-src="admin/Res_img/dishes/'.$r['img'].'" width=350px height=350px>';?> <?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?>
                             
                         </div>
                     <div id="product-info">
