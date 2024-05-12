@@ -4,8 +4,14 @@
 include("connection/connect.php");  //include connection file
 error_reporting(0);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
-
+$servername = "localhost"; //server
+$username = "root"; //username
+$password = ""; //password
+$dbname = "online_rest";  //database
+$conn = new mysqli($servername, $username, $password, $dbname);
 ?>
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,16 +73,23 @@ session_start(); //start temp session until logout/browser closed
                 <div class="container text-center hero-text font-white">
                     <h1>Order Delivery & Take-Out </h1>
                     <h5 class="font-white space-xs">Find branch, specials, and coupons for free</h5>
-                    <div class="banner-form">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat...."> </div>
-                            </div>
-                            <button onclick="location.href='restaurant.php'" type="button" class="btn theme-btn btn-lg">Search food</button>
-                        </form>
                     </div>
+                   
+              <!-- Trang chính -->
+                <div class="banner-form">
+                    <form class="form-inline" action="result.php" method="post">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" id="exampleInputAmount" name="search" placeholder="I would like to eat....">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn theme-btn btn-lg">Search food</button>
+                    </form>
+                </div>
+          
+          
+           
                     <div class="steps">
                         <div class="step-item step1">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483 483" width="512" height="512">
@@ -328,7 +341,7 @@ session_start(); //start temp session until logout/browser closed
                 </div>
             </div>
         </section>
-        <            <!-- start: FOOTER -->
+                  <!-- start: FOOTER -->
             <footer class="footer">
                 <div class="container">
                     <!-- top footer statrs -->
