@@ -2,37 +2,9 @@
 <html lang="en">
 <?php
 include("connection/connect.php");
-include_once 'product-action.php';
 error_reporting(0);
 session_start();
-if(empty($_SESSION["user_id"]))
-{
-	header('location:login.php');
-}
-else{
-
-										  
-												foreach ($_SESSION["cart_item"] as $item)
-												{
-											
-												$item_total += ($item["price"]*$item["quantity"]);
-												
-													if($_POST['submit'])
-													{
-						
-													$SQL="insert into users_orders(u_id,title,quantity,price) values('".$_SESSION["user_id"]."','".$item["title"]."','".$item["quantity"]."','".$item["price"]."')";
-						
-														mysqli_query($db,$SQL);
-														
-														$success = "Thankyou! Your Order Placed successfully!";
-
-														
-														
-													}
-												}
 ?>
-
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,20 +21,19 @@ else{
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> </head>
+
 <body>
-    
-    <div class="site-wrapper">
-        <!--header starts-->
+           <!--header starts-->
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/logo.png" alt="" width=40px height=40px> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width=40px height=40px> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">branch <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Branch <span class="sr-only"></span></a> </li>
                             
 							<?php
 						if(empty($_SESSION["user_id"]))
@@ -87,96 +58,49 @@ else{
             <!-- /.navbar -->
         </header>
         <div class="page-wrapper">
+            <!-- top Links -->
             <div class="top-links">
                 <div class="container">
                     <ul class="row links">
-                      
-                        <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose Restaurant</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Order Noodles</a></li>
-                        <li class="col-xs-12 col-sm-4 link-item active" ><span>3</span><a href="checkout.php">Order and Pay online</a></li>
+                       
+                        <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="restaurants.php">Choose Branch</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="#">Order noodles</a></li>
+                        <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay online</a></li>
                     </ul>
                 </div>
             </div>
-			
-                <div class="container">
-                 
-					   <span style="color:green;">
-								<?php echo $success; ?>
-										</span>
-					
-                </div>
-            
-			
-			
-				  
-            <div class="container m-t-30">
-			<form action="" method="post">
-                <div class="widget clearfix">
-                    
-                    <div class="widget-body">
-                        <form method="post" action="#">
-                            <div class="row">
-                                
-                                <div class="col-sm-12">
-                                    <div class="cart-totals margin-b-20">
-                                        <div class="cart-totals-title">
-                                            <h4>Cart Summary</h4> </div>
-                                        <div class="cart-totals-fields">
-										
-                                            <table class="table">
-											<tbody>
-                                          
-												 
-											   
-                                                    <tr>
-                                                        <td>Cart Subtotal</td>
-                                                        <td> <?php echo "$".$item_total; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shipping &amp; Handling</td>
-                                                        <td>free shipping</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> <?php echo "$".$item_total; ?></strong></td>
-                                                    </tr>
-                                                </tbody>
-												
-												
-												
-												
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!--cart summary-->
-                                    <div class="payment-option">
-                                        <ul class=" list-unstyled">
-                                            <li>
-                                                <label class="custom-control custom-radio  m-b-20">
-                                                    <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Payment on delivery</span>
-                                                    <br> <span>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span> </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-control custom-radio  m-b-10">
-                                                    <input name="mod"  type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
-                                            </li>
-                                        </ul>
-                                        <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit"  class="btn btn-outline-success btn-block" value="Order now"> </p>
-                                    </div>
-									</form>
-                                </div>
-                            </div>
-                       
-                    </div>
-                </div>
-				 </form>
+            <!-- end:Top links -->
+            <!-- start: Inner page hero -->
+            <div class="inner-page-hero bg-image" data-image-src="images/img/res.jpeg">
+                <div class="container"> </div>
+                <!-- end:Container -->
             </div>
+          
+            <div class="container">
+                <div id="product-detail">
+                    <div id="product-img">
+                            <img src="images/HH1.jpg" width=350px height=350px>
+                        </div>
+                    <div id="product-info">
+                        <h1>HAO HAO-Spicy sour instant noodles </h1>
+                        <label>Price: </label><span class="product-price">$1.10</span><br/>
+                        <label class="add-to-card"><a href="#">Add to card</a></label>
+                        </div>
+                    <div class="clear-both"></div>
+                    <p >
+                    SQUEEZED NOODLES - Wheat flour (75.0%), shortening, coloring agent (curcumin (E100(i))).
+
+SEASONING PACKET - Shrimp powder (30 g/kg), palm oil, salt, sugar, garlic powder, chili powder, dried spring onion, acid regulator (citric acid (E330)), flavor enhancer (monosodium L-glutamate (E621), disodium 5'-inosinate (E631), disodium 5'-guanylate (E627)).
+                        </p>
+                </div>
+                        </div>
+            
             <section class="app-section">
                 <div class="app-wrap">
                     <div class="container">
                         <div class="row text-img-block text-xs-left">
                             <div class="container">
-                                <div class="col-xs-12 col-sm-6  right-image text-center">
+                                <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
                                     <figure> <img src="images/app.png" alt="Right Image"> </figure>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 left-text">
@@ -209,7 +133,7 @@ else{
                             <h5>About Us</h5>
                             <ul>
                                 <li><a href="#">About us</a> </li>
-                            
+                                
                             </ul>
                         </div>
                         <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
@@ -224,19 +148,18 @@ else{
                         <div class="col-xs-12 col-sm-2 pages color-gray">
                             <h5>Pages</h5>
                             <ul>
-                                
+                            
                                 <li><a href="#">Make order</a> </li>
-                                <li><a href="#">Add to card</a> </li>
+                                <li><a href="#">Add to cart</a> </li>
                             </ul>
                         </div>
                         <div class="col-xs-12 col-sm-3 popular-locations color-gray">
                             <h5>Popular locations</h5>
                             <ul>
+                                <li><a href="#">District 1</a> </li>
                                 <li><a href="#">District 5</a> </li>
                                 <li><a href="#">District 3</a> </li>
-                                <li><a href="#">District 1</a> </li>
-                               
-                                
+                              
                             </ul>
                         </div>
                     </div>
@@ -254,11 +177,11 @@ else{
                                         <li>
                                             <a href="#"> <img src="images/mastercard.png" alt="Mastercard"> </a>
                                         </li>
-                                      
+                                     
                                         <li>
                                             <a href="#"> <img src="images/stripe.png" alt="Stripe"> </a>
                                         </li>
-                                        
+                                     
                                     </ul>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 address color-gray">
@@ -277,10 +200,9 @@ else{
             </footer>
             <!-- end:Footer -->
         </div>
-        <!-- end:page wrapper -->
-         </div>
-
-     <!-- Bootstrap core JavaScript
+  
+    
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
@@ -293,7 +215,68 @@ else{
 </body>
 
 </html>
-
-<?php
+<style>
+.container {
+  
+  align-items: center;
 }
-?>
+
+#product-img {
+  margin-right: 20px; 
+  margin-top: 30px;
+  width: 50px;
+  height:50px;
+}
+
+#product-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 500px;
+}
+
+#product-info h1 {
+  margin-top: 0px; 
+  
+}
+
+#product-info label {
+  margin-top: 0px;
+  font-size: 30px;
+ 
+}
+#product-detail p{
+    margin-top: 100px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.add-to-card a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-to-card a:hover {
+  background-color: #45a049;
+}
+.product-price {
+  display: inline;
+  margin-left: 0px;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+#product-detail{
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top:50px;
+    padding: 30px;
+    
+}
+</style>
