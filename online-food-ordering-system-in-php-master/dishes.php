@@ -215,40 +215,33 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
 													
 													 
 													 ?>
-                                <!-- Một sản phẩm -->
+
 <div class="food-item">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-lg-6">
-            <div class="item-img pull-left">
-                <a class="restaurant-logo pull-left" href="#"><img src="admin/Res_img/dishes/<?php echo $product['img']; ?>" alt="Food logo"></a>
-            </div>
-            <!-- end:Logo -->
-            <div class="rest-descr">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-8">
+										<form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                            <div class="rest-logo pull-left">
+                                                <a class="restaurant-logo pull-left" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
+                                            </div>
+                                            <!-- end:Logo -->
+                                            <div class="rest-descr">
                 <h6><a href="detail.php?d_id=<?php echo $product['d_id']; ?>"><?php echo $product['title']; ?></a></h6>
                 <p><?php echo $product['slogan']; ?></p>
             </div>
-            <!-- end:Description -->
-        </div>
-        <!-- end:col -->
-        <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$<?php echo $product['price']; ?></span></div>
-        <div class="col-xs-6 col-sm-4 col-lg-4">
-            <div class="row no-gutter">
-                <div class="col-xs-7">
-                    <select class="form-control b-r-0" id="exampleSelect2">
-                        <option>Size SM</option>
-                        <option>Size LG</option>
-                        <option>Size XL</option>
-                    </select>
-                </div>
-                <div class="col-xs-5">
-                    <input class="form-control" type="number" value="0" id="quant-input-2"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- end:row -->
-</div>
-<!-- end:Food item -->
-
+                                            <!-- end:Description -->
+                                        </div>
+                                        <!-- end:col -->
+                                        <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> 
+										<span class="price pull-left" >$<?php echo $product['price']; ?></span>
+										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
+										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
+										</div>
+										</form>
+                                    </div>
+                                    <!-- end:row -->
+                                </div>
+                                <!-- end:Food item -->
+								
 								<?php
 									  }
 									}
@@ -400,15 +393,8 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 2.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
-                                    <div class="col-xs-7">
-                                        <select class="form-control b-r-0" id="exampleSelect2">
-                                            <option>Size SM</option>
-                                            <option>Size LG</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <input class="form-control" type="number" value="0" id="quant-input-2"> </div>
+                                <button type="button" class="btn btn-primary">Add to Cart</button>
+
                                 </div>
                             </div>
                         </div>
@@ -430,15 +416,8 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 2.49</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
-                                    <div class="col-xs-7">
-                                        <select class="form-control b-r-0" id="exampleSelect3">
-                                            <option>Size SM</option>
-                                            <option>Size LG</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <input class="form-control" type="number" value="0" id="quant-input-3"> </div>
+                                <button type="button" class="btn btn-primary">Add to Cart</button>
+
                                 </div>
                             </div>
                         </div>
@@ -460,15 +439,8 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 1.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
-                                    <div class="col-xs-7">
-                                        <select class="form-control b-r-0" id="exampleSelect5">
-                                            <option>Size SM</option>
-                                            <option>Size LG</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <input class="form-control" type="number" value="0" id="quant-input-4"> </div>
+                                <button type="button" class="btn btn-primary">Add to Cart</button>
+
                                 </div>
                             </div>
                         </div>
@@ -490,15 +462,8 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 3.15</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
-                                    <div class="col-xs-7">
-                                        <select class="form-control b-r-0" id="exampleSelect6">
-                                            <option>Size SM</option>
-                                            <option>Size LG</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5">
-                                        <input class="form-control" type="number" value="0" id="quant-input-5"> </div>
+                                <button type="button" class="btn btn-primary">Add to Cart</button>
+
                                 </div>
                             </div>
                         </div>
