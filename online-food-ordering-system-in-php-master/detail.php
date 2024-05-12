@@ -79,32 +79,45 @@ session_start(); //start temp session until logout/browser closed
                 <div class="container"> </div>
                 <!-- end:Container -->
             </div>
+            
             <?php 
-					
-						$query_res= mysqli_query($db,"select * from dishes LIMIT 3"); 
-									      while($r=mysqli_fetch_array($query_res))
-                                                          
+// Include the connection file
+include("connection/connect.php");
 
-          ?>
-            <div class="container">
-                <div id="product-detail">
-                    <div id="product-img">
-                            <img src="images/HH1.jpg" width=350px height=350px>
-                            <a class="dishes" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
-                        </div>
-                    <div id="product-info">
-                        <h1>HAO HAO-Spicy sour instant noodles </h1>
-                        <label>Price: </label><span class="product-price">$1.10</span><br/>
-                        <label class="add-to-card"><a href="">Add to card</a></label>
-                        </div>
-                    
-                    <p >
-                    SQUEEZED NOODLES - Wheat flour (75.0%), shortening, coloring agent (curcumin (E100(i))).
+// Check if the 'd_id' parameter is set in the URL
+if(isset($_GET['d_id'])) {
+    // Sanitize the input to prevent SQL injection
+    $d_id = mysqli_real_escape_string($db, $_GET['d_id']);
 
-SEASONING PACKET - Shrimp powder (30 g/kg), palm oil, salt, sugar, garlic powder, chili powder, dried spring onion, acid regulator (citric acid (E330)), flavor enhancer (monosodium L-glutamate (E621), disodium 5'-inosinate (E631), disodium 5'-guanylate (E627)).
-                        </p>
-                </div>
-                        </div>
+    // Fetch product details from the database based on the d_id
+    $query_res = mysqli_query($db, "SELECT * FROM dishes WHERE d_id = '$d_id' LIMIT 1"); 
+    if($r = mysqli_fetch_array($query_res)) {
+?>
+   <div class="product-container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="admin/Res_img/dishes/<?php echo $r['img']; ?>" alt="<?php echo $r['title']; ?>" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <div class="product-details">
+                <h1><?php echo $r['title']; ?></h1>
+                <p class="price">$<?php echo $r['price']; ?></p>
+                <p class="slogan"><?php echo $r['slogan']; ?></p>
+                <label class="add-to-card"><a href="restaurants.php">Add to card</a></label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+    } else {
+        echo "Product not found.";
+    }
+} else {
+    echo "Invalid product id.";
+}
+?>
+
             
             <section class="app-section">
                 <div class="app-wrap">
@@ -276,18 +289,36 @@ SEASONING PACKET - Shrimp powder (30 g/kg), palm oil, salt, sugar, garlic powder
 .add-to-card a:hover {
   background-color: #45a049;
 }
-.product-price {
-  display: inline;
-  margin-left: 0px;
-  font-size: 30px;
-  margin-top: 0px;
+.product-details {
+    padding: 20px;
+    
+}
+.product-container {
+    margin:50px;
+    padding: 50px;
+    border: 1px solid #ddd; /* Viền sản phẩm */
+    border-radius: 10px; /* Bo tròn viền */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng mờ */
+    display: flex; /* Sử dụng flexbox để căn chỉnh hình ảnh và chi tiết sản phẩm */
 }
 
-#product-detail{
-    border: 1px solid #000;
-    border-radius: 10px;
-    margin-top:50px;
-    padding: 30px;
-    
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-details .price {
+    font-weight: bold;
+}
+
+.product-details .slogan {
+    color: #777;
+}
+
 }
 </style>

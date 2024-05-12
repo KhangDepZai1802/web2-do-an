@@ -9,7 +9,6 @@ include_once 'product-action.php'; //including controller
 
 ?>
 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,6 +78,8 @@ include_once 'product-action.php'; //including controller
             <!-- start: Inner page hero -->
 			<?php $ress= mysqli_query($db,"select * from restaurant where rs_id='$_GET[res_id]'");
 									     $rows=mysqli_fetch_array($ress);
+                                         $query_res = mysqli_query($db, "SELECT * FROM dishes WHERE d_id = '$d_id' LIMIT 1"); 
+                                         
 										  ?>
             <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
                 <div class="profile">
@@ -92,7 +93,7 @@ include_once 'product-action.php'; //including controller
 							
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
                                 <div class="pull-left right-text white-txt">
-                                    <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
+                                    <h6><a href="detail.php?d_id='.$r['d_id'].'"><?php echo $rows['title']; ?></a></h6>
                                     <p><?php echo $rows['address']; ?></p>
                                     <ul class="nav nav-inline">
                                         <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min $ 10,00</a> </li>
@@ -214,32 +215,40 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
 													
 													 
 													 ?>
-                                <div class="food-item">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-lg-8">
-										<form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
-                                            <div class="rest-logo pull-left">
-                                                <a class="restaurant-logo pull-left" href="#"><?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo">'; ?></a>
-                                            </div>
-                                            <!-- end:Logo -->
-                                            <div class="rest-descr">
-                                                <h6><a href="detail.php#"><?php echo $product['title']; ?></a></h6>
-                                                <p> <?php echo $product['slogan']; ?></p>
-                                            </div>
-                                            <!-- end:Description -->
-                                        </div>
-                                        <!-- end:col -->
-                                        <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> 
-										<span class="price pull-left" >$<?php echo $product['price']; ?></span>
-										  <input class="b-r-0" type="text" name="quantity"  style="margin-left:30px;" value="1" size="2" />
-										  <input type="submit" class="btn theme-btn" style="margin-left:40px;" value="Add to cart" />
-										</div>
-										</form>
-                                    </div>
-                                    <!-- end:row -->
-                                </div>
-                                <!-- end:Food item -->
-								
+                                <!-- Một sản phẩm -->
+<div class="food-item">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+            <div class="item-img pull-left">
+                <a class="restaurant-logo pull-left" href="#"><img src="admin/Res_img/dishes/<?php echo $product['img']; ?>" alt="Food logo"></a>
+            </div>
+            <!-- end:Logo -->
+            <div class="rest-descr">
+                <h6><a href="detail.php?d_id=<?php echo $product['d_id']; ?>"><?php echo $product['title']; ?></a></h6>
+                <p><?php echo $product['slogan']; ?></p>
+            </div>
+            <!-- end:Description -->
+        </div>
+        <!-- end:col -->
+        <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$<?php echo $product['price']; ?></span></div>
+        <div class="col-xs-6 col-sm-4 col-lg-4">
+            <div class="row no-gutter">
+                <div class="col-xs-7">
+                    <select class="form-control b-r-0" id="exampleSelect2">
+                        <option>Size SM</option>
+                        <option>Size LG</option>
+                        <option>Size XL</option>
+                    </select>
+                </div>
+                <div class="col-xs-5">
+                    <input class="form-control" type="number" value="0" id="quant-input-2"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- end:row -->
+</div>
+<!-- end:Food item -->
+
 								<?php
 									  }
 									}
@@ -384,7 +393,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                 </div>
                                 <!-- end:Logo -->
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
+                                    <h6><a href="detail.php?d_id='.$r['d_id'].'">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
                                 <!-- end:Description -->
                             </div>
                             <!-- end:col -->
@@ -414,7 +423,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                 </div>
                                 <!-- end:Logo -->
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
+                                    <h6><a href="detail.php?d_id='.$r['d_id'].'">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
                                 <!-- end:Description -->
                             </div>
                             <!-- end:col -->
@@ -444,7 +453,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                 </div>
                                 <!-- end:Logo -->
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
+                                    <h6><a href="detail.php?d_id='.$r['d_id'].'">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
                                 <!-- end:Description -->
                             </div>
                             <!-- end:col -->
@@ -474,7 +483,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                 </div>
                                 <!-- end:Logo -->
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6> </div>
+                                    <h6><a href="detail.php?d_id='.$r['d_id'].'">'.$r['title'].'</a></h6> </div>
                                 <!-- end:Description -->
                             </div>
                             <!-- end:col -->
@@ -497,6 +506,7 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                     </div>
                     <!-- end:Food item -->
                 </div>
+                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn theme-btn">Add to cart</button>
